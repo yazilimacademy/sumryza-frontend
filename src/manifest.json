@@ -1,8 +1,9 @@
 {
-    "name": "YouTube Summarizer MVP",
+    "name": "__MSG_extensionName__",
     "version": "0.1",
     "manifest_version": 3,
-    "description": "MVP: Summarize YouTube videos using ChatGPT 4o mini API.",
+    "default_locale": "en",
+    "description": "__MSG_extensionDescription__",
     "action":{
         "default_popup": "popup.html"
       },

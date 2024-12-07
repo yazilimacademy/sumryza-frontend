@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="tr">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ayarlar</title>
-    <link rel="stylesheet" href="popup.css">
-</head>
-
-<body>
-    <div class="container">
-        <h3>Özet Dilini Seçin</h3>
-        <div class="select-wrapper">
-            <select id="languageSelect">
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <!-- Daha fazla dil eklemek için buraya seçenekler ekleyin -->
-            </select>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title data-i18n="settingsTitle">Ayarlar</title>
+        <link rel="stylesheet" href="popup.css">
+    </head>
+    <body>
+        <div class="container">
+            <h3 data-i18n="selectLanguage">Özet Dilini Seçin</h3>
+            <div class="select-wrapper">
+                <select id="languageSelect">
+                    <option value="tr" data-i18n="languageTurkish">Türkçe</option>
+                    <option value="en" data-i18n="languageEnglish">English</option>
+                    <option value="es" data-i18n="languageSpanish">Español</option>
+                    <option value="fr" data-i18n="languageFrench">Français</option>
+                    <option value="de" data-i18n="languageGerman">Deutsch</option>
+                </select>
+            </div>
+            <div id="notification" class="notification" data-i18n="languageSaved">Tercih edilen dil kaydedildi!</div>
         </div>
-        <div id="notification" class="notification">Tercih edilen dil kaydedildi!</div>
-    </div>
-    <script src="popup.js"></script>
-</body>
-
+        <script src="popup.js"></script>
+    </body>
 </html>
