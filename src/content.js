@@ -11,16 +11,22 @@ function showMessage(msg) {
 
 // Display the transcript to the user (showing complete text)
 function displayTranscript(text) {
+    // Check for user theme preference
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     // Create a modal dialog for better visibility
     const modal = document.createElement('div');
     modal.style.position = 'fixed';
     modal.style.left = '50%';
     modal.style.top = '50%';
     modal.style.transform = 'translate(-50%, -50%)';
-    modal.style.backgroundColor = 'white';
+    modal.style.backgroundColor = isDarkMode ? '#333' : 'white';
+    modal.style.color = isDarkMode ? 'white' : 'black';
     modal.style.padding = '20px';
     modal.style.borderRadius = '8px';
-    modal.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    modal.style.boxShadow = isDarkMode
+        ? '0 4px 6px rgba(255, 255, 255, 0.1)'
+        : '0 4px 6px rgba(0, 0, 0, 0.1)';
     modal.style.maxWidth = '80%';
     modal.style.maxHeight = '80vh';
     modal.style.overflow = 'auto';
@@ -33,13 +39,17 @@ function displayTranscript(text) {
     textContent.style.margin = '0';
     textContent.style.fontSize = '14px';
     textContent.textContent = text;
-    
+
     // Add close button
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
     closeButton.style.marginTop = '10px';
     closeButton.style.padding = '5px 10px';
     closeButton.style.cursor = 'pointer';
+    closeButton.style.backgroundColor = isDarkMode ? '#555' : '#f0f0f0';
+    closeButton.style.color = isDarkMode ? 'white' : 'black';
+    closeButton.style.border = isDarkMode ? '1px solid #777' : '1px solid #ccc';
+    closeButton.style.borderRadius = '4px';
     closeButton.onclick = () => modal.remove();
 
     // Add overlay
