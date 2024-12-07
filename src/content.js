@@ -9,7 +9,6 @@ function showMessage(msg) {
     alert(msg);
 }
 
-// Display the transcript to the user (showing complete text)
 function displayTranscript(text) {
     // Check for user theme preference
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -50,7 +49,33 @@ function displayTranscript(text) {
     closeButton.style.color = isDarkMode ? 'white' : 'black';
     closeButton.style.border = isDarkMode ? '1px solid #777' : '1px solid #ccc';
     closeButton.style.borderRadius = '4px';
-    closeButton.onclick = () => modal.remove();
+    closeButton.style.marginRight = '10px';
+    closeButton.onclick = () => {
+        overlay.remove();
+        modal.remove();
+    };
+
+    // Add copy button
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy';
+    copyButton.style.marginTop = '10px';
+    copyButton.style.padding = '5px 10px';
+    copyButton.style.cursor = 'pointer';
+    copyButton.style.backgroundColor = isDarkMode ? '#555' : '#f0f0f0';
+    copyButton.style.color = isDarkMode ? 'white' : 'black';
+    copyButton.style.border = isDarkMode ? '1px solid #777' : '1px solid #ccc';
+    copyButton.style.borderRadius = '4px';
+    copyButton.onclick = async () => {
+        try {
+            await navigator.clipboard.writeText(textContent.textContent);
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy';
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy text:', err);
+        }
+    };
 
     // Add overlay
     const overlay = document.createElement('div');
@@ -67,10 +92,19 @@ function displayTranscript(text) {
     };
 
     modal.appendChild(textContent);
-    modal.appendChild(closeButton);
+    // Add buttons in a button container to keep them aligned
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.marginTop = '10px';
+    buttonContainer.appendChild(closeButton);
+    buttonContainer.appendChild(copyButton);
+
+    modal.appendChild(buttonContainer);
+
     document.body.appendChild(overlay);
     document.body.appendChild(modal);
 }
+
 
 // Show Loading Spinner
 function showLoadingSpinner() {
