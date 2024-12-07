@@ -1,0 +1,107 @@
+/* popup.css */
+
+/* Genel Stil Ayarları */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 16px;
+    color: #333;
+    width: 320px;
+    box-sizing: border-box;
+}
+
+/* Başlık Stili */
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+/* Kutu Stili */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Dropdown Stili */
+select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+    outline: none;
+}
+
+/* Dropdown İkonu */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+    transform: translateY(-50%);
+}
+
+/* Bildirim Stili */
+.notification {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.notification.show {
+    display: block;
+    animation: fadein 0.3s, fadeout 0.3s 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 340px) {
+    body {
+        padding: 12px;
+    }
+}

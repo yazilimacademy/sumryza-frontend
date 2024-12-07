@@ -3,10 +3,13 @@
     "version": "0.1",
     "manifest_version": 3,
     "description": "MVP: Summarize YouTube videos using ChatGPT 4o mini API.",
+    "action":{
+        "default_popup": "popup.html"
+      },
     "permissions": [
         "activeTab",
-        "scripting"
-        
+        "scripting",
+        "storage"
     ],
     "host_permissions": [
         "*://www.youtube.com/*",

@@ -96,12 +96,18 @@ async function handleSummarizeButtonClick() {
         return;
     }
 
+    // Retrieve the user's preferred language
+    const preferredLanguage = await new Promise((resolve) => {
+        chrome.storage.sync.get(['preferredLanguage'], (result) => {
+            // Default to 'tr' if not set
+            resolve(result.preferredLanguage || 'tr');
+        });
+    });
+
     try {
-        // Show the loading spinner
         showLoadingSpinner();
 
-        // Call your Python FastAPI endpoint
-        const response = await fetch(`http://localhost:8000/transcript?video_id=${videoId}`, {
+        const response = await fetch(`http://localhost:8000/transcript?video_id=${videoId}&summary_language=${preferredLanguage}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -111,7 +117,6 @@ async function handleSummarizeButtonClick() {
         });
 
         if (!response.ok) {
-            // If not 2xx, handle errors
             const errorText = await response.text();
             if (response.status === 404) {
                 showMessage("No captions or transcript found for this video.");
@@ -124,19 +129,19 @@ async function handleSummarizeButtonClick() {
         }
 
         const data = await response.json();
-        if (data && data.summary_turkish) {
-            displayTranscript(data.summary_turkish);
+        if (data && data.summary) {
+            displayTranscript(data.summary);
         } else {
             showMessage("No summary returned from the server.");
-        }
+        }        
     } catch (error) {
         console.error("Error fetching transcript:", error);
         showMessage("Failed to connect to the transcript service.");
     } finally {
-        // Hide the loading spinner
         hideLoadingSpinner();
     }
 }
+
 
 function addSummarizeButtonIfNeeded() {
     // Try the selector related to the Subscribe button

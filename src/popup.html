@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayarlar</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Özet Dilini Seçin</h3>
+        <div class="select-wrapper">
+            <select id="languageSelect">
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <!-- Daha fazla dil eklemek için buraya seçenekler ekleyin -->
+            </select>
+        </div>
+        <div id="notification" class="notification">Tercih edilen dil kaydedildi!</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
