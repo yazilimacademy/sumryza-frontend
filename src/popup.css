@@ -11,11 +11,20 @@ body {
     box-sizing: border-box;
 }
 
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
 /* Başlık Stili */
 h3 {
     text-align: center;
     margin-bottom: 20px;
     color: #4a4a4a;
+}
+
+body.dark-mode h3 {
+    color: #cccccc;
 }
 
 /* Kutu Stili */
@@ -42,10 +51,21 @@ select {
     box-sizing: border-box;
 }
 
+body.dark-mode select {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
 select:focus {
     border-color: #6c63ff;
     box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
     outline: none;
+}
+
+body.dark-mode select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.8);
 }
 
 /* Dropdown İkonu */
@@ -69,6 +89,10 @@ select:focus {
     transform: translateY(-50%);
 }
 
+body.dark-mode .select-wrapper::after {
+    border-top-color: #e0e0e0;
+}
+
 /* Bildirim Stili */
 .notification {
     display: none;
@@ -82,6 +106,12 @@ select:focus {
     text-align: center;
     font-size: 14px;
     box-sizing: border-box;
+}
+
+body.dark-mode .notification {
+    background-color: #2d3e2e;
+    color: #b7dbb9;
+    border: 1px solid #3e5942;
 }
 
 .notification.show {

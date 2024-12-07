@@ -50,9 +50,8 @@ function displayTranscript(text) {
     closeButton.style.color = isDarkMode ? 'white' : 'black';
     closeButton.style.border = isDarkMode ? '1px solid #777' : '1px solid #ccc';
     closeButton.style.borderRadius = '4px';
-    closeButton.onclick = () => modal.remove();
 
-    // Add overlay
+    // Overlay creation
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
@@ -61,10 +60,16 @@ function displayTranscript(text) {
     overlay.style.height = '100%';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
     overlay.style.zIndex = '9999';
-    overlay.onclick = () => {
-        overlay.remove();
+
+    // Helper function to remove modal and overlay
+    const removeModalAndOverlay = () => {
         modal.remove();
+        overlay.remove();
     };
+
+    // Attach close event listeners
+    closeButton.onclick = removeModalAndOverlay;
+    overlay.onclick = removeModalAndOverlay;
 
     modal.appendChild(textContent);
     modal.appendChild(closeButton);
