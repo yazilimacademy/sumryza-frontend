@@ -1,0 +1,83 @@
+{
+  "extensionName": {
+    "message": "MVP YouTube Özetleyici"
+  },
+  "extensionDescription": {
+    "message": "MVP: ChatGPT 4o mini API'yi kullanarak YouTube videolarını özetleyin."
+  },
+  "settingsTitle": {
+    "message": "Ayarlar"
+  },
+  "selectLanguage": {
+    "message": "Özet Dilini Seçin"
+  },
+  "languageTurkish": {
+    "message": "Türkçe"
+  },
+  "languageEnglish": {
+    "message": "İngilizce"
+  },
+  "languageSpanish": {
+    "message": "İspanyolca"
+  },
+  "languageFrench": {
+    "message": "Fransızca"
+  },
+  "languageGerman": {
+    "message": "Almanca"
+  },
+  "languageSaved": {
+    "message": "Tercih edilen dil kaydedildi!"
+  },
+  "languageSavedNotification": {
+    "message": "Tercih edilen dil kaydedildi!"
+  },
+  "languageSavedConsoleLog": {
+    "message": "Kaydedilen dil:"
+  },
+  "darkModeEnabled": {
+    "message": "Karanlık mod etkinleştirildi."
+  },
+  "darkModeDisabled": {
+    "message": "Karanlık mod devre dışı bırakıldı."
+  },
+  "closeButtonText": {
+    "message": "Kapat"
+  },
+  "copyButtonText": {
+    "message": "Kopyala"
+  },
+  "copiedButtonText": {
+    "message": "Kopyalandı!"
+  },
+  "copyErrorLog": {
+    "message": "Metin kopyalanamadı:"
+  },
+  "noVideoIdError": {
+    "message": "Video kimliği bulunamadı. Transkript alınamıyor."
+  },
+  "noCaptionsError": {
+    "message": "Bu video için altyazı veya transkript bulunamadı."
+  },
+  "serverError": {
+    "message": "Sunucudan transkript alınırken hata oluştu."
+  },
+  "unexpectedError": {
+    "message": "Beklenmedik bir hata oluştu:"
+  },
+  "noSummaryError": {
+    "message": "Sunucudan özet döndürülmedi."
+  },
+  "connectionError": {
+    "message": "Transkript hizmetine bağlanılamadı."
+  },
+  "fetchErrorLog": {
+    "message": "Transkript alınırken hata:"
+  },
+  "summarizeButtonText": {
+    "message": "ÖZETLE"
+  },
+  "summarizeButtonClicked": {
+    "message": "Özetle butonuna tıklandı!"
+  }
+}

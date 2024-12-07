@@ -1,0 +1,83 @@
+{
+  "extensionName": {
+    "message": "YouTube Summarizer MVP"
+  },
+  "extensionDescription": {
+    "message": "MVP: Summarize YouTube videos using ChatGPT 4o mini API."
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "selectLanguage": {
+    "message": "Select Summary Language"
+  },
+  "languageTurkish": {
+    "message": "Turkish"
+  },
+  "languageEnglish": {
+    "message": "English"
+  },
+  "languageSpanish": {
+    "message": "Spanish"
+  },
+  "languageFrench": {
+    "message": "French"
+  },
+  "languageGerman": {
+    "message": "German"
+  },
+  "languageSaved": {
+    "message": "Preferred language saved!"
+  },
+  "languageSavedNotification": {
+    "message": "Preferred language saved!"
+  },
+  "languageSavedConsoleLog": {
+    "message": "Saved language:"
+  },
+  "darkModeEnabled": {
+    "message": "Dark mode enabled."
+  },
+  "darkModeDisabled": {
+    "message": "Dark mode disabled."
+  },
+  "closeButtonText": {
+    "message": "Close"
+  },
+  "copyButtonText": {
+    "message": "Copy"
+  },
+  "copiedButtonText": {
+    "message": "Copied!"
+  },
+  "copyErrorLog": {
+    "message": "Failed to copy text:"
+  },
+  "noVideoIdError": {
+    "message": "No video ID found. Cannot get transcript."
+  },
+  "noCaptionsError": {
+    "message": "No captions or transcript found for this video."
+  },
+  "serverError": {
+    "message": "Error fetching transcript from the server."
+  },
+  "unexpectedError": {
+    "message": "An unexpected error occurred:"
+  },
+  "noSummaryError": {
+    "message": "No summary returned from the server."
+  },
+  "connectionError": {
+    "message": "Failed to connect to the transcript service."
+  },
+  "fetchErrorLog": {
+    "message": "Error fetching transcript:"
+  },
+  "summarizeButtonText": {
+    "message": "SUMMARIZE"
+  },
+  "summarizeButtonClicked": {
+    "message": "Summarize button clicked!"
+  }
+}
