@@ -37,3 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2300); // 2s bekle + 0.3s fadeout
     }
 });
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+}
+
+// Tema değişikliklerini dinlemek için
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (e.matches) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+});
