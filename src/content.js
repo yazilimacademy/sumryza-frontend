@@ -137,7 +137,7 @@ function hideLoadingSpinner() {
 async function handleSummarizeButtonClick() {
 	const videoId = getVideoIdFromUrl(window.location.href);
 	if (!videoId) {
-		showMessage("No video ID found. Cannot get transcript.");
+		showMessage("noVideoIdError");
 		return;
 	}
 
