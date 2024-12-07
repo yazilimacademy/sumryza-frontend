@@ -58,7 +58,7 @@ function displayTranscript(text) {
 
 	// Add copy button
 	const copyButton = document.createElement('button');
-	copyButton.textContent = 'Copy';
+	copyButton.textContent = chrome.i18n.getMessage("copyButtonText");
 	copyButton.style.marginTop = '10px';
 	copyButton.style.padding = '5px 10px';
 	copyButton.style.cursor = 'pointer';
